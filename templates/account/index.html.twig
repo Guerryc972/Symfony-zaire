@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte - Good Morning{% endblock %}
+
+{% block content %}
+<div class="col-10">
+<h1>Mon compte</h1>
+
+Bienvenue {{app.user.firstname}} dans votre compte.<br/>
+{% if is_granted('ROLE_ADMIN') %}
+      <li><a href="/admin">Vous êtes un administrateur, accéder au backoffice !</a> <br/></li>
+  {% endif %}
+  <hr>
+ C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.
+ <ul>
+    <li><a href="compte/password">Modifier mon mot de passe</a></li>
+    <li><a href="#">Gérer mon adresse de livraison</a></li>
+</ul>
+
+ </div>
+ <hr>
+
+{% endblock %}

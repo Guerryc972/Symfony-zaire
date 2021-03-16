@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %} {% block title %}Nos produits - Good Morning{%
+endblock %} {% block content %}
+<h1 class="text-center mt-4 mb-3">Nos produits</h1>
+
+<div class="container-fluid row">
+  {% for product in products %}
+  <div class="col-md-4">
+    <div
+      class="product-item text-center"
+      style="text-transform: uppercase; margin-bottom: 1px"
+    >
+      <a href="{{ path('product', { slug: product.slug }) }}">
+        <img
+          src="uploads/files/{{ product.illustration }}"
+          alt="{{ product.name }}"
+          class="img-fluid product-img"
+          style=" margin-top: 25px"
+          
+        />
+        
+      </a>
+      
+      <h5>{{ product.name }}</h5>
+      <span class="product-subtitle" style="display: block; font: size 13px">{{
+        product.subtitle
+      }}</span>
+      <span
+        class="product-price mb-5"
+        style="font-weight: bold; font: size 15px"
+        >{{(product.price / 100)|number_format(2) }} €</span
+      >
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock %}

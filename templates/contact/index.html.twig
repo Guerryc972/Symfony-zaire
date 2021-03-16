@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact Good Morning{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+ <div id="carouselExampleSlidesOnly" class="  carousel slide" data-ride="carousel" style="margin-top:10px ;">
+  <div class="carousel-inner" style="border-radius: 20px;">
+    <div class="carousel-item active" >
+        <img src="{{asset('assets/images/contact1.jpg')}}" class="d-block w-100 " >
+    </div> 
+
+    
+    <div class="carousel-item">
+      <img src="{{asset('assets/images/contactc.jpg')}}" class="d-block w-100" >
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset('assets/images/contactb.jpg')}}" class="d-block w-100" >
+    </div>
+  </div>
+ </div>
+
+ <div class="row mt-4 justify-content-center">
+  <div class="col-sm-6 col-md-10 col-lg-10 "  >
+    <h2>Nous contacter</h2>
+    <p>N'hésitez pas à prendre contact avec notre équipe.</p>
+    <hr>
+     {% for message in app.flashes('notice') %}
+       <div class="alert alert-info">{{message}}</div>
+     {% endfor %}
+      {{form(form)}}
+         </div>
+ </div>
+ <div class="row justify-content-around">
+   <div class="col mt-5 " style="text-align: center;">
+       
+         <img  src="{{asset('assets/images/Ellipse 1.png')}}" >
+         <h5>PISTON SANDRA</h5>
+          <p style="font-size: 14px;">RESPONSABLE  COMMERCIAL <br> 01 48 26 34 55
+        <br>piston.sandra@goodmorning.fr</p>
+      
+    </div>
+    
+    <div class="col mt-5 " style="text-align: center;">
+         
+         <img  src="{{asset('assets/images/Ellipse 2.png')}}" >
+         <h5>NGUYEN ERIC</h5>
+         <p style="font-size: 14px;">RESPONSABLE  COMMERCIAL <br> 01 48 26 34 56
+        <br>nguyen.eric@goodmorning.fr</p>
+         
+    </div>
+   </div>
+</div>
+
+
+{% endblock %}
